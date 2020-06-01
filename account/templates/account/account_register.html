@@ -1,0 +1,28 @@
+{% extends 'site/base.html' %}
+
+{% block title %}Create new account {% endblock title %}
+
+{% block content %}
+
+<div class="user-register">
+  <h3>Create New Account</h3>
+  {% if form.errors %}
+    <p id=user-register-warn>
+      Something went worng, please try again.
+    </p>
+    
+    <form class="" action="." method="post">
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      <button type="submit" name="button">Sign Up</button>
+    </form>
+  {% else %}
+    <form class="" action="." method="post">
+      {% csrf_token %}
+      {{ user_form.as_p }}
+      <button type="submit" name="button">Sign Up</button>
+    </form>
+  {% endif %}
+</div>
+
+{% endblock content %}

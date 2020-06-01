@@ -1,0 +1,33 @@
+{% extends 'site/base.html' %}
+
+{% block title %}Edit Profile{% endblock title %}
+
+{% block content %}
+
+<div class="profile-edit">
+  <h3>Edit your Profile</h3>
+  <p>You can edit your account profile using the following form.</p>
+
+  {% if form.errors %}
+    <p>Something went wrong please try again.</p>
+
+    <form class="" action="." method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{user_form.as_p}}
+      {{profile_form.as_p}}
+      <button type="submit" name="button">Update</button>
+    </form>
+
+  {% else %}
+
+    <form class="" action="." method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{user_form.as_p}}
+      {{profile_form.as_p}}
+      <button type="submit" name="button">Update</button>
+
+
+  {% endif %}
+</div>
+
+{% endblock content %}

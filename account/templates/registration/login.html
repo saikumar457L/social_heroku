@@ -1,0 +1,38 @@
+{% extends 'site/base.html' %}
+
+{% block title %}Login to your account {% endblock title %}
+
+{% block content %}
+
+<div class="login">
+  <h3>Login to your account</h3>
+  <p>Please provide your account details.</p>
+
+  {% if form.errors %}
+
+    <p id='login-warn'>Please try again.</p>
+
+    <form class="" action="." method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="hidden" name="next" value="{{next}}"/>
+      <button type="submit" name="button">Login</button> |
+      <a href="{% url 'password_reset' %}">Forgot your password</a>.
+      <a href="{% url 'account_register' %}">Sign Up</a>
+    </form>
+
+  {% else %}
+
+    <form class="" action="." method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="hidden" name="next" value="{{next}}"/>
+      <button type="submit" name="button">Login</button> |
+      <a href="{% url 'password_reset' %}">Forgot your password</a>.
+      <a href="{% url 'account_register' %}">Sign Up</a>
+    </form>
+
+  {% endif %}
+</div>
+
+{% endblock content %}

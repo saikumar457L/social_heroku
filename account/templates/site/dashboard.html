@@ -1,0 +1,13 @@
+{% extends 'site/base.html' %}
+
+{% block title %}Wellcome to dashboard {% endblock title %}
+
+{% block content %}
+
+<div class="dashboard">
+  <h4>Wellcome to your dashboard</h4>
+  <p>Now you can update your profile. <a href="{% url 'update_profile' %}">Update Profile</a></p>
+
+</div>
+
+{% endblock content %}
