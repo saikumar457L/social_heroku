@@ -148,3 +148,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = "628606321335208"
+SOCIAL_AUTH_FACEBOOK_SECREAT = "478a6113434587fc584c19f473f9689b"
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ["email"]

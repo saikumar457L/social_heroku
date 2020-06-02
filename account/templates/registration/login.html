@@ -28,9 +28,14 @@
       {{form.as_p}}
       <input type="hidden" name="next" value="{{next}}"/>
       <button type="submit" name="button">Login</button> |
+
+    </form>
+
+    <div class="extra-add">
       <a href="{% url 'password_reset' %}">Forgot your password</a>.
       <a href="{% url 'account_register' %}">Sign Up</a>
-    </form>
+      <a href="{% url 'social:begin' 'facebook' %}">Sign with Facebook</a>
+    </div>
 
   {% endif %}
 </div>
