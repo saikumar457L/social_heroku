@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "social_django.middleware.SocialAuthExceptionMiddleware",
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "social_django.context_processors.backends",
+                "social_django.context_processors.login_redirect",
             ],
         },
     },
@@ -151,6 +154,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = "3069542366454962"
-SOCIAL_AUTH_FACEBOOK_SECREAT = "391e05bc6eabd18afc035852ce59a396"
+SOCIAL_AUTH_FACEBOOK_SECRET = "391e05bc6eabd18afc035852ce59a396"
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ["email"]
+
+SOCIAL_AUTH_GITHUB_KEY = '78c58824e6c92ef3d0c5'
+SOCIAL_AUTH_GITHUB_SECRET = '4f3390d9f17e25a2048623847bc37747f9922f8c'
