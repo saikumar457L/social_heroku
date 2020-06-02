@@ -25,7 +25,7 @@ SECRET_KEY = '_k6h@hx6l+&^_f559(fc)t^f@_b7jt0)=(guqt$dl!%k@qyzzo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*","sai.com","localhost","127.0.0.1","mysite.com"]
 
 
 # Application definition
@@ -147,6 +147,7 @@ LOGOUT_URL = 'logout'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    "social_core.backends.facebook.Facebook0Auth2",
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = "559243851651284"
