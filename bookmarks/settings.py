@@ -147,7 +147,7 @@ LOGOUT_URL = 'logout'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
-    "social_core.backends.facebook.Facebook0Auth2",
+    "social_core.backends.facebook.FacebookOAuth2",
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = "559243851651284"
