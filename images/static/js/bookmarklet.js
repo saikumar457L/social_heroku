@@ -1,6 +1,6 @@
 (function() {
   var jquery_version="3.3.1";
-  var site_url = 'https://9144288b5d42.ngrok.io/';
+  var site_url = 'https://warm-stream-62067.herokuapp.com/';
   var static_url = site_url+'static/';
   var min_width=100;
   var min_height = 100;
