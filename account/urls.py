@@ -2,7 +2,7 @@ from django.urls import path
 
 from django.contrib.auth import views as auth_views
 
-from .views import dashboard,register,profile_edit
+from .views import dashboard,register,profile_edit,Profile_view
 
 
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path("",dashboard, name="dashboard"),
     path("account-register/",register, name="account_register"),
     path("profile_edit/",profile_edit,name="update_profile"),
-    
+    path("profile_view/",Profile_view.as_view(),name="profile_view"),
+
 
 ]

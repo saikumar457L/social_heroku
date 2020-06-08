@@ -25,7 +25,7 @@ SECRET_KEY = '_k6h@hx6l+&^_f559(fc)t^f@_b7jt0)=(guqt$dl!%k@qyzzo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*","sai.com","localhost","127.0.0.1","mysite.com"]
+ALLOWED_HOSTS = ["*","sai.com","localhost","127.0.0.1","mysite.com","https://8508a766e1af.ngrok.io"]
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*","sai.com","localhost","127.0.0.1","mysite.com"]
 INSTALLED_APPS = [
     "account.apps.AccountConfig",
     "social_django",
+    "images.apps.ImagesConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,8 +131,8 @@ STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-MEDIA_URL = '/media/'
-MEDIAL_ROOT = os.path.join(BASE_DIR,"media/")
+MEDIA_URL = 'media/'
+MEDIAL_ROOT = os.path.join(BASE_DIR,"media")
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 

@@ -8,6 +8,12 @@
   <h4>Wellcome to your dashboard</h4>
   <p>Now you can update your profile. <a href="{% url 'update_profile' %}">Update Profile</a></p>
 
+  {% with total_images_created=request.user.images_created.count %}
+    <p>You have bookmarked {{total_images_created}}image{{total_images_created|pluralize}}</p>
+  {% endwith %}
+
+  <p>Drag the follwoing button to your bookmarks toolbar to bookmark images from other websites <a href="javascript:{% include 'bookmarklet_launcher.js' %}">Bookmark it</a></p>
+
 </div>
 
 {% endblock content %}

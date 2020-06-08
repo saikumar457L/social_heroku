@@ -1,6 +1,9 @@
 from django.shortcuts import render
 
+from django.urls import reverse_lazy,reverse
+
 from django.contrib.auth.decorators import login_required #import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.conf import settings
 
@@ -10,7 +13,12 @@ from .models import Profile
 
 from django.contrib import messages
 
+from django.views.generic import TemplateView
 # Create your views here.
+
+
+class Profile_view(LoginRequiredMixin,TemplateView):
+    template_name = "site/profile_view.html"
 
 
 @login_required
@@ -53,10 +61,13 @@ def profile_edit(request):
 
             messages.success(request,"Profile updated successfully.")
 
+
         else:
             messages.error(request,"Something went wrong, please try again.")
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
+
+
 
     return render (request,"account/profile_edit.html",{"user_form":user_form,"profile_form":profile_form})
