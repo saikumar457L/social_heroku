@@ -7,6 +7,9 @@ from django.contrib import messages
 
 from .forms import ImageCreationForm
 
+from django.shortcuts import get_object_or_404
+from .models import Image
+
 # Create your views here.
 
 
@@ -35,3 +38,8 @@ def image_create(request):
         form = ImageCreationForm(data=request.GET) # must insert parameter  as data=request.GET
 
     return render(request,"image/create.html",{"section":"images","form":form})
+
+
+def image_detail(request,id,slug):
+    image = get_object_or_404(Image,id=id,slug=slug)
+    return render (request,"image/image_detail.html",{'section':'images','image':image})
